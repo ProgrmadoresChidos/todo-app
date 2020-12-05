@@ -4,6 +4,7 @@ import Header from './components/header';
 import { AddNewTodo } from './components/AddNewTodo'
 import { TodoContext } from './context/TodoContext';
 import { todoReducer } from './reducer/todoReducer'
+import { TodoList } from './components/TodoList';
 
 export const TodoApp = () => {
 
@@ -14,6 +15,7 @@ export const TodoApp = () => {
             active: true
         }
     ]
+
 
     const [todos, dispatch] = useReducer(todoReducer, initTodos);
 
@@ -29,6 +31,7 @@ export const TodoApp = () => {
                         <Route path="/all">
                             <div>
                                 <AddNewTodo />
+                                <TodoList />
                             </div>
                         </Route>
                         <Route path="/active">
