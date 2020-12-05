@@ -29,6 +29,9 @@ export const AddNewTodo = () => {
             active: true
         };
         dispatch(addTodo(newTodo));
+        setFormValue({
+            inputTodo: ''
+        });
     }
 
     return (

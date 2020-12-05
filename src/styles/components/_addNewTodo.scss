@@ -1,11 +1,11 @@
 .addtodo {
   width: 100%;
 }
-.addtodo__form{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+.addtodo__form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 .addtodo__input {
   color: #828282;
@@ -20,6 +20,7 @@
   line-height: 17px;
   padding-left: 12px;
   margin-right: 25px;
+  outline: none;
 }
 .addtodo__button {
   color: #ffffff;
@@ -35,4 +36,5 @@
   height: 16px;
   width: 109px;
   height: 56px;
+  outline: none;
 }

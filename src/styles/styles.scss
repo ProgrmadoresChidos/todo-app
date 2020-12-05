@@ -6,6 +6,7 @@ $darker-color: #000000;
 $dark-color: #333333;
 $gray-color: #BDBDBD;
 
+@import './components/todoList';
 @import "./components/addNewTodo";
 @import './components/todoApp';
 @import './components/header';
