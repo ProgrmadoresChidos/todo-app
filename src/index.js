@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import './styles/styles.scss';
 import { TodoApp } from './TodoApp';
 
 ReactDOM.render(
-  <TodoApp />,
+  <Router>
+    <TodoApp />
+  </Router>,
   document.getElementById('root')
 );
 

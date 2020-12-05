@@ -1,0 +1,23 @@
+nav {
+  width: 47%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid $gray-color;
+}
+
+.nav__tab {
+  flex: 1;
+  text-decoration: none;
+  color: $dark-color;
+  text-align: center;
+  font-family: 'Montserrat', 'sans-serif';
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 19px;
+}
+
+.nav__tab--selected {
+  border-bottom: 1px solid $primary-color;
+}
