@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react'
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Header from './components/header';
 import { AddNewTodo } from './components/AddNewTodo'
 import { TodoContext } from './context/TodoContext';
@@ -26,6 +26,9 @@ export const TodoApp = () => {
                 <Header />
                 <section className="content">
                     <Switch>
+                        <Route path="/" exact>
+                            <Redirect to="/all" />
+                        </Route>
                         <Route path="/all">
                             <div>
                                 <AddNewTodo />

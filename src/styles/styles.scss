@@ -6,8 +6,9 @@ $darker-color: #000000;
 $dark-color: #333333;
 $gray-color: #BDBDBD;
 
-@import './components//todoApp.scss';
-@import './components//header.scss';
-@import './components//nav.scss';
 @import "./components/addNewTodo";
+@import './components/todoApp';
+@import './components/header';
+@import './components/nav';
+@import './components/tab';
 

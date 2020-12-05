@@ -1,12 +1,12 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import Tab from './tab';
 
 const Nav = () => {
   return (
     <nav>
-      <NavLink className="nav__tab" activeClassName="nav__tab--selected" to="all">All</NavLink>
-      <NavLink className="nav__tab" activeClassName="nav__tab--selected" to="active">Active</NavLink>
-      <NavLink className="nav__tab" activeClassName="nav__tab--selected" to="completed">Completed</NavLink>
+      <Tab to="/all">All</Tab>
+      <Tab to="/active">Active</Tab>
+      <Tab to="/completed">Completed</Tab>
     </nav>
   );
 };
