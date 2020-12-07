@@ -5,6 +5,12 @@ $primary-color: #2F80ED;
 $darker-color: #000000;
 $dark-color: #333333;
 $gray-color: #BDBDBD;
+$danger-color: #EB5757;
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
 
 @import './components/todoList';
 @import "./components/addNewTodo";

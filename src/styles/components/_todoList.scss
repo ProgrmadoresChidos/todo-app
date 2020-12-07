@@ -59,3 +59,23 @@
 .todoListitem__content p {
   flex: 1
 }
+.todoList__deleteWrapper {
+  display: flex;
+  align-self: stretch;
+  justify-content: flex-end;
+}
+.todoList__deleteWrapper button {
+  border: none;
+  outline: none;
+  background-color: $danger-color;
+  color: #ffffff;
+  font-family: 'Montserrat', 'sans-serif';
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  border-radius: 4px;
+  padding: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

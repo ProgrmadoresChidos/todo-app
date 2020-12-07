@@ -23,6 +23,16 @@ export const TodoList = ({ completed = false }) => {
                     <TodoListItem key={todo.id} {...todo} completed />
                 ))
             }
+            {
+                completed ?
+                    <div className="todoList__deleteWrapper">
+                        <button>
+                            <i class="material-icons md-18">delete_outline</i>
+                            delete all
+                        </button>
+                    </div>
+                    : null
+            }
         </div>
     )
 }
