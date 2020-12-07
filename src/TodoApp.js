@@ -8,20 +8,38 @@ import { TodoList } from './components/TodoList';
 
 export const TodoApp = () => {
 
-    const initTodos = [
-        {
-            id: new Date().getDate(),
-            desc: 'test',
-            active: true
-        }
-    ]
+    /* 
+        active property
+         true: todo is not finished,
+         false: todo is finished
+    */
 
+    const initTodos = {
+        activeTodo: {},
+        todos: [
+            {
+                id: 1,
+                desc: 'test',
+                active: true
+            },
+            {
+                id: 2,
+                desc: 'El nito',
+                active: false
+            },
+            {
+                id: 3,
+                desc: 'Reto 1',
+                active: true
+            }
+        ]
+    };
 
-    const [todos, dispatch] = useReducer(todoReducer, initTodos);
+    const [todosItems, dispatch] = useReducer(todoReducer, initTodos);
 
     return (
         <TodoContext.Provider value={{
-            todos,
+            todosItems,
             dispatch
         }}>
             <div className="todoApp">

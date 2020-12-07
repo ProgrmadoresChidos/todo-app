@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const TodoListItem = ({ desc, active }) => {
-    
+
     return (
         <div className="todoListitem">
             <div className="todoListitem__content mouse">
@@ -12,7 +12,7 @@ export const TodoListItem = ({ desc, active }) => {
                         )
                     }
                 </div>
-                <p className="todoListitem__span">{desc}</p>
+                <p className={`todoListitem__span ${ !active && "todoList__desc-toggle"}`}>{desc}</p>
             </div>
         </div>
     )

@@ -24,7 +24,6 @@
   width: 24px;
   height: 24px;
   margin-right: 7px;
-  
 }
 .todoListitem__span {
   margin: 0px;
@@ -36,8 +35,8 @@
   line-height: 22px;
   color: $darker-color;
 }
-.todoListitem__checkbox-active{
-    background-color: #2196F3;
+.todoListitem__checkbox-active {
+  background-color: #2196f3;
 }
 .todoListitem__checkbox-checked {
   width: 5px;
@@ -48,7 +47,9 @@
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-
+.todoList__desc-toggle {
+  text-decoration: line-through;
+}
 .mouse {
   cursor: pointer;
 }
