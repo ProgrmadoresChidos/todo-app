@@ -4,7 +4,6 @@ import { TodoListItem } from './TodoListItem';
 
 export const TodoList = () => {
 
-    // const todos = [1, 2, 3, 4];
     const { todosItems: { todos = [] } } = useContext(TodoContext);
 
     return (

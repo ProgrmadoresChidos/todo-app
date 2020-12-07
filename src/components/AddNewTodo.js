@@ -1,18 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { addTodo } from '../actions/todo';
 import { TodoContext } from '../context/TodoContext'
 
 export const AddNewTodo = () => {
 
-    const { todos, dispatch } = useContext(TodoContext);
+    const { dispatch } = useContext(TodoContext);
     const [formValue, setFormValue] = useState({
         inputTodo: ''
     });
     const { inputTodo } = formValue;
-
-    useEffect(() => {
-        console.log(todos);
-    }, [todos]);
 
     const handleInput = ({ target }) => {
         setFormValue({
@@ -23,15 +19,17 @@ export const AddNewTodo = () => {
 
     const hadleAddTodo = (e) => {
         e.preventDefault();
-        const newTodo = {
-            id: new Date().getTime(),
-            desc: inputTodo,
-            active: true
-        };
-        dispatch(addTodo(newTodo));
-        setFormValue({
-            inputTodo: ''
-        });
+        if (inputTodo.trim().length >= 2) {
+            const newTodo = {
+                id: new Date().getTime(),
+                desc: inputTodo,
+                active: true
+            };
+            dispatch(addTodo(newTodo));
+            setFormValue({
+                inputTodo: ''
+            });
+        }
     }
 
     return (
@@ -39,6 +37,7 @@ export const AddNewTodo = () => {
             <div className="addtodo__form">
                 <form onSubmit={hadleAddTodo}>
                     <input
+                        autoComplete="off"
                         onChange={handleInput}
                         value={inputTodo}
                         name="inputTodo"
