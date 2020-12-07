@@ -17,7 +17,7 @@ export const todoToggle = (id) => (
         payload: id
     }
 )
-export const todoActive = () => (
+export const getTodoActive = () => (
     {
         type: types.todoActive
     }

@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from 'react'
 import { TodoContext } from '../context/TodoContext';
 import { TodoListItem } from './TodoListItem';
-import { getCompleted } from '../actions/todo';
+import { getCompleted, getTodoActive } from '../actions/todo';
 
-export const TodoList = ({ completed = false }) => {
+export const TodoList = ({ completed = false, active = false }) => {
 
     // const { todosItems: { todos = [] } } = useContext(TodoContext);
     // const todos = [1, 2, 3, 4];
@@ -12,23 +12,27 @@ export const TodoList = ({ completed = false }) => {
     useEffect(() => {
         if (completed) {
             dispatch(getCompleted());
+        } else if (active) {
+            dispatch(getTodoActive());
         }
-    }, [dispatch, completed, todos]);
+    }, [dispatch, completed, active, todos]);
 
-    const todoList = completed ? activeTodo : todos;
+    const todoList = completed ? activeTodo : active ? activeTodo : todos;
 
     return (
         <div className="todoList">
             {
-                todoList.map((todo) => (
-                    <TodoListItem key={todo.id} {...todo} completed />
-                ))
+                todoList ?
+                    todoList.map((todo) => (
+                        <TodoListItem key={todo.id} {...todo} completed />
+                    ))
+                    : null
             }
             {
                 completed ?
                     <div className="todoList__deleteWrapper">
                         <button>
-                            <i class="material-icons md-18">delete_outline</i>
+                            <i className="material-icons md-18">delete_outline</i>
                             delete all
                         </button>
                     </div>
