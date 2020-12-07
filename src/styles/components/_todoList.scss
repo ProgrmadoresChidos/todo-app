@@ -12,7 +12,7 @@
 .todoListitem__content {
   display: flex;
   align-items: center;
-  width: fit-content;
+  // width: fit-content;
 }
 .todoListitem__checkbox {
   display: flex;
@@ -52,4 +52,10 @@
 }
 .mouse {
   cursor: pointer;
+}
+.todoListitem__content i {
+  color: $gray-color;
+}
+.todoListitem__content p {
+  flex: 1
 }

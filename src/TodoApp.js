@@ -15,7 +15,7 @@ export const TodoApp = () => {
     */
 
     const initTodos = {
-        activeTodo: {},
+        activeTodo: [],
         todos: [
             {
                 id: 1,
@@ -31,6 +31,11 @@ export const TodoApp = () => {
                 id: 3,
                 desc: 'Reto 1',
                 active: true
+            },
+            {
+                id: 3,
+                desc: 'El robo',
+                active: false
             }
         ]
     };
@@ -61,9 +66,7 @@ export const TodoApp = () => {
                         </div>
                         </Route>
                         <Route path="/completed">
-                            <div>
-                                completed
-                        </div>
+                            <TodoList completed />
                         </Route>
                     </Switch>
                 </section>

@@ -11,3 +11,8 @@ export const addTodo = (todo) => (
         payload: todo
     }
 );
+export const getCompleted = () => (
+    {
+        type: types.todoCompleted,
+    }
+);
