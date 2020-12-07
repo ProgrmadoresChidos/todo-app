@@ -1,16 +1,27 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { TodoContext } from '../context/TodoContext';
 import { TodoListItem } from './TodoListItem';
+import { getCompleted } from '../actions/todo';
 
-export const TodoList = () => {
+export const TodoList = ({ completed = false }) => {
 
-    const { todosItems: { todos = [] } } = useContext(TodoContext);
+    // const { todosItems: { todos = [] } } = useContext(TodoContext);
+    // const todos = [1, 2, 3, 4];
+    const { todosItems: { todos = [], activeTodo = [] }, dispatch } = useContext(TodoContext);
+
+    useEffect(() => {
+        if (completed) {
+            dispatch(getCompleted());
+        }
+    }, [dispatch, completed, todos]);
+
+    const todoList = completed ? activeTodo : todos;
 
     return (
         <div className="todoList">
             {
-                todos.map((todo) => (
-                    <TodoListItem key={todo.id} {...todo} />
+                todoList.map((todo) => (
+                    <TodoListItem key={todo.id} {...todo} completed />
                 ))
             }
         </div>

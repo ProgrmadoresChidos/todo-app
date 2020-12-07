@@ -20,7 +20,13 @@ export const todoReducer = (state, action) => {
         case types.todoActive:
             return {
                 ...state,
-                activeTodo: [state?.todos.filter(todo => todo.active)]
+                activeTodo: [...state?.todos.filter(todo => todo.active)]
+                // return [...state, action.payload];
+            }
+        case types.todoCompleted:
+            return {
+                activeTodo: [...state?.todos.filter(value => value.active === false)],
+                todos: state.todos,
             };
         default:
             return state;

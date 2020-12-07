@@ -22,3 +22,8 @@ export const todoActive = () => (
         type: types.todoActive
     }
 )
+export const getCompleted = () => (
+    {
+        type: types.todoCompleted,
+    }
+);

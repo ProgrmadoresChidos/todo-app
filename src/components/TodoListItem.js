@@ -21,6 +21,7 @@ export const TodoListItem = ({ id, desc, active }) => {
                     }
                 </div>
                 <p className={`todoListitem__span ${!active && "todoList__desc-toggle"}`}>{desc}</p>
+                <i className="material-icons">delete_outline</i>
             </div>
         </div>
     )

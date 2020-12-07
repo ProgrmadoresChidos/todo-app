@@ -73,9 +73,7 @@ export const TodoApp = () => {
                             </div>
                         </Route>
                         <Route path="/completed">
-                            <div>
-                                completed
-                        </div>
+                            <TodoList completed />
                         </Route>
                     </Switch>
                 </section>
