@@ -11,6 +11,17 @@ export const addTodo = (todo) => (
         payload: todo
     }
 );
+export const todoToggle = (id) => (
+    {
+        type: types.todoToggle,
+        payload: id
+    }
+)
+export const todoActive = () => (
+    {
+        type: types.todoActive
+    }
+)
 export const getCompleted = () => (
     {
         type: types.todoCompleted,

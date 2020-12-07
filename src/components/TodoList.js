@@ -5,6 +5,7 @@ import { getCompleted } from '../actions/todo';
 
 export const TodoList = ({ completed = false }) => {
 
+    // const { todosItems: { todos = [] } } = useContext(TodoContext);
     // const todos = [1, 2, 3, 4];
     const { todosItems: { todos = [], activeTodo = [] }, dispatch } = useContext(TodoContext);
 
@@ -12,7 +13,7 @@ export const TodoList = ({ completed = false }) => {
         if (completed) {
             dispatch(getCompleted());
         }
-    });
+    }, [dispatch, completed, todos]);
 
     const todoList = completed ? activeTodo : todos;
 
