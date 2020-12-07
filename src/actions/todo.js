@@ -27,3 +27,16 @@ export const getCompleted = () => (
         type: types.todoCompleted,
     }
 );
+export const removeAll = () => (
+    {
+        type: types.todoRemoveAll,
+    }
+);
+export const removeTodo = id => (
+    {
+        type: types.todoRemove,
+        payload: {
+            id,
+        }
+    }
+);

@@ -25,9 +25,19 @@ export const todoReducer = (state, action) => {
             }
         case types.todoCompleted:
             return {
+                ...state,
                 activeTodo: [...state?.todos.filter(value => value.active === false)],
-                todos: state.todos,
             };
+        case types.todoRemoveAll:
+            return {
+                todos: state.todos.filter(value => value.active),
+                activeTodo: [],
+            };
+        case types.todoRemove:
+            return {
+                ...state,
+                todos: state.todos.filter(value => value.id !== action.payload.id),
+            }
         default:
             return state;
     }
