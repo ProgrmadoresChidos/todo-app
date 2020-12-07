@@ -69,7 +69,7 @@ export const TodoApp = () => {
                         <Route path="/active">
                             <div>
                                 <AddNewTodo />
-                                <TodoList />
+                                <TodoList active />
                             </div>
                         </Route>
                         <Route path="/completed">
